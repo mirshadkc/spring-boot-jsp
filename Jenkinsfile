@@ -29,7 +29,7 @@ pipeline {
             steps {
                 sh '''
                     version=$(perl -nle 'print "$1" if /<version>(v\\d+\\.\\d+\\.\\d+)<\\/version>/' pom.xml)
-                    ssh -o StrictHostKeyChecking=no target/news-${version}.jar root@${SERVER_IP}:/opt/
+                    ssh -o StrictHostKeyChecking=no 162.241.90.60:/var/lib/jenkins/workspace/spring-develop/target/news-${version}.jar root@${SERVER_IP}:/opt/
                 '''
             }
         }
